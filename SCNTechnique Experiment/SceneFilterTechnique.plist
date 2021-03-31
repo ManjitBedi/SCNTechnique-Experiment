@@ -13,7 +13,7 @@
 			<key>metalVertexShader</key>
 			<string>scene_filter_vertex</string>
 			<key>metalFragmentShader</key>
-			<string>scene_filter_fragment</string>
+			<string>scene_filter_fragment_chromatic_abberation</string>
 			<key>draw</key>
 			<string>DRAW_QUAD</string>
 			<key>inputs</key>

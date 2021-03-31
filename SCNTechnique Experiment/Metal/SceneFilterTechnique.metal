@@ -2,7 +2,7 @@
 //  SceneFilterTechnique.metal
 //  ARSCNViewImageFiltersExample
 //
-//  Created by Lësha Turkowski on 4/29/18.
+//  Orignal code created by Lësha Turkowski on 4/29/18.
 //  Copyright © 2018 Lësha Turkowski. All rights reserved.
 //
 
@@ -38,4 +38,29 @@ fragment half4 scene_filter_fragment(VertexOut vert [[stage_in]],
     color.rgb = half3(dot(color.rgb, weights));
     
     return color;
+}
+
+// Based on code from
+// https://github.com/JohnCoates/Slate
+fragment half4 scene_filter_fragment_chromatic_abberation(VertexOut vert [[stage_in]],
+                                texture2d<half, access::sample> scene [[texture(0)]])
+{
+    float2 coordinates = vert.texcoord;
+    constexpr sampler samp = sampler(coord::normalized, address::repeat, filter::nearest);
+
+    half4 color = scene.sample(samp, coordinates);
+
+    float2 offset = (coordinates - 0.4) * 2.0;
+    float offsetDot = dot(offset, offset);
+
+    const float strength = 5.0;
+    float2 multiplier = strength * offset * offsetDot;
+    float2 redCoordinate = coordinates - 0.003 * multiplier;
+    float2 blueCoordinate = coordinates + 0.01 * multiplier;
+    half4 adjustedColor;
+    adjustedColor.r = scene.sample(samp, redCoordinate).r;
+    adjustedColor.g = color.g;
+    adjustedColor.b = scene.sample(samp, blueCoordinate).b;
+    adjustedColor.a = color.a;
+    return adjustedColor;
 }

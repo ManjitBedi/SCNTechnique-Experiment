@@ -15,8 +15,6 @@
 		782F44D626150BFE00320932 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 782F44D426150BFE00320932 /* LaunchScreen.storyboard */; };
 		782F44E02615120400320932 /* SceneFilterTechnique.metal in Sources */ = {isa = PBXBuildFile; fileRef = 782F44DF2615120400320932 /* SceneFilterTechnique.metal */; };
 		782F44E32615120D00320932 /* SceneFilterTechnique.plist in Resources */ = {isa = PBXBuildFile; fileRef = 782F44E22615120D00320932 /* SceneFilterTechnique.plist */; };
-		782F44EC261514F500320932 /* ChromaticAberration.metal in Sources */ = {isa = PBXBuildFile; fileRef = 782F44EA261514F500320932 /* ChromaticAberration.metal */; };
-		782F44ED261514F500320932 /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = 782F44EB261514F500320932 /* Passthrough.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +28,6 @@
 		782F44D726150BFE00320932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		782F44DF2615120400320932 /* SceneFilterTechnique.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = SceneFilterTechnique.metal; sourceTree = "<group>"; };
 		782F44E22615120D00320932 /* SceneFilterTechnique.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SceneFilterTechnique.plist; sourceTree = "<group>"; };
-		782F44EA261514F500320932 /* ChromaticAberration.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = ChromaticAberration.metal; sourceTree = "<group>"; };
-		782F44EB261514F500320932 /* Passthrough.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Passthrough.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +67,6 @@
 				782F44CD26150BFD00320932 /* ViewController.swift */,
 				782F44CF26150BFD00320932 /* Main.storyboard */,
 				782F44D426150BFE00320932 /* LaunchScreen.storyboard */,
-				782F44D726150BFE00320932 /* Info.plist */,
 				782F44E22615120D00320932 /* SceneFilterTechnique.plist */,
 			);
 			path = "SCNTechnique Experiment";
@@ -80,8 +75,7 @@
 		782F44DE26150F2500320932 /* Metal */ = {
 			isa = PBXGroup;
 			children = (
-				782F44EA261514F500320932 /* ChromaticAberration.metal */,
-				782F44EB261514F500320932 /* Passthrough.metal */,
+				782F44D726150BFE00320932 /* Info.plist */,
 				782F44DF2615120400320932 /* SceneFilterTechnique.metal */,
 			);
 			path = Metal;
@@ -162,8 +156,6 @@
 				782F44E02615120400320932 /* SceneFilterTechnique.metal in Sources */,
 				782F44CE26150BFD00320932 /* ViewController.swift in Sources */,
 				782F44CA26150BFD00320932 /* AppDelegate.swift in Sources */,
-				782F44ED261514F500320932 /* Passthrough.metal in Sources */,
-				782F44EC261514F500320932 /* ChromaticAberration.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
