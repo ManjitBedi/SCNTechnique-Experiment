@@ -13,6 +13,10 @@
 		782F44D126150BFD00320932 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 782F44CF26150BFD00320932 /* Main.storyboard */; };
 		782F44D326150BFE00320932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 782F44D226150BFE00320932 /* Assets.xcassets */; };
 		782F44D626150BFE00320932 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 782F44D426150BFE00320932 /* LaunchScreen.storyboard */; };
+		782F44E02615120400320932 /* SceneFilterTechnique.metal in Sources */ = {isa = PBXBuildFile; fileRef = 782F44DF2615120400320932 /* SceneFilterTechnique.metal */; };
+		782F44E32615120D00320932 /* SceneFilterTechnique.plist in Resources */ = {isa = PBXBuildFile; fileRef = 782F44E22615120D00320932 /* SceneFilterTechnique.plist */; };
+		782F44EC261514F500320932 /* ChromaticAberration.metal in Sources */ = {isa = PBXBuildFile; fileRef = 782F44EA261514F500320932 /* ChromaticAberration.metal */; };
+		782F44ED261514F500320932 /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = 782F44EB261514F500320932 /* Passthrough.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		782F44D226150BFE00320932 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		782F44D526150BFE00320932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		782F44D726150BFE00320932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		782F44DF2615120400320932 /* SceneFilterTechnique.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = SceneFilterTechnique.metal; sourceTree = "<group>"; };
+		782F44E22615120D00320932 /* SceneFilterTechnique.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SceneFilterTechnique.plist; sourceTree = "<group>"; };
+		782F44EA261514F500320932 /* ChromaticAberration.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = ChromaticAberration.metal; sourceTree = "<group>"; };
+		782F44EB261514F500320932 /* Passthrough.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Passthrough.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,27 @@
 		782F44C826150BFD00320932 /* SCNTechnique Experiment */ = {
 			isa = PBXGroup;
 			children = (
+				782F44DE26150F2500320932 /* Metal */,
 				782F44C926150BFD00320932 /* AppDelegate.swift */,
+				782F44D226150BFE00320932 /* Assets.xcassets */,
 				782F44CB26150BFD00320932 /* art.scnassets */,
 				782F44CD26150BFD00320932 /* ViewController.swift */,
 				782F44CF26150BFD00320932 /* Main.storyboard */,
-				782F44D226150BFE00320932 /* Assets.xcassets */,
 				782F44D426150BFE00320932 /* LaunchScreen.storyboard */,
 				782F44D726150BFE00320932 /* Info.plist */,
+				782F44E22615120D00320932 /* SceneFilterTechnique.plist */,
 			);
 			path = "SCNTechnique Experiment";
+			sourceTree = "<group>";
+		};
+		782F44DE26150F2500320932 /* Metal */ = {
+			isa = PBXGroup;
+			children = (
+				782F44EA261514F500320932 /* ChromaticAberration.metal */,
+				782F44EB261514F500320932 /* Passthrough.metal */,
+				782F44DF2615120400320932 /* SceneFilterTechnique.metal */,
+			);
+			path = Metal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				782F44CC26150BFD00320932 /* art.scnassets in Resources */,
+				782F44E32615120D00320932 /* SceneFilterTechnique.plist in Resources */,
 				782F44D626150BFE00320932 /* LaunchScreen.storyboard in Resources */,
 				782F44D326150BFE00320932 /* Assets.xcassets in Resources */,
 				782F44D126150BFD00320932 /* Main.storyboard in Resources */,
@@ -138,8 +159,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				782F44E02615120400320932 /* SceneFilterTechnique.metal in Sources */,
 				782F44CE26150BFD00320932 /* ViewController.swift in Sources */,
 				782F44CA26150BFD00320932 /* AppDelegate.swift in Sources */,
+				782F44ED261514F500320932 /* Passthrough.metal in Sources */,
+				782F44EC261514F500320932 /* ChromaticAberration.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

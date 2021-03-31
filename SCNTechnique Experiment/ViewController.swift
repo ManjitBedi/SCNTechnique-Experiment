@@ -18,6 +18,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Set the view's delegate
         sceneView.delegate = self
+
+        // This is to allow post processing effects
+        if #available(iOS 13.0, *) {
+            sceneView.rendersCameraGrain = false
+        }
+
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
@@ -27,6 +33,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Set the scene to the view
         sceneView.scene = scene
+
+        let filterTechnique = makeTechnique(fromPlistNamed: "SceneFilterTechnique")
+        sceneView.technique = filterTechnique
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,6 +53,24 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Pause the view's session
         sceneView.session.pause()
+    }
+
+    // MARK: - Private methods
+
+    private func makeTechnique(fromPlistNamed plistName: String) -> SCNTechnique {
+        guard let url = Bundle.main.url(forResource: plistName, withExtension: "plist") else {
+            fatalError("\(plistName).plist does not exist in the main bundle")
+        }
+
+        guard let dictionary = NSDictionary(contentsOf: url) as? [String: Any] else {
+            fatalError("Failed to parse \(plistName).plist as a dictionary")
+        }
+
+        guard let technique = SCNTechnique(dictionary: dictionary) else {
+            fatalError("Failed to initialize a technique using \(plistName).plist")
+        }
+
+        return technique
     }
 
     // MARK: - ARSCNViewDelegate
