@@ -5,5 +5,5 @@ Attempt at using a chromatic abberation filter with an ARKit scene usign SCNTech
 
 Based on code from a few places:
 
-[Slate Camera app](https://github.com/JohnCoates/Slate)
+[Slate Camera app](https://github.com/JohnCoates/Slate)  
 [ARKit using SCNTechnique](https://github.com/2RKowski/ARSCNViewImageFiltersExample)
